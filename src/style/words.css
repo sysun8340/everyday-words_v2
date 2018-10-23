@@ -1,0 +1,21 @@
+.wordsContainer {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  flex-flow: wrap;
+}
+.wordsText {
+  width: 80%;
+  line-height: 2.5rem;
+  
+}
+.randomButton {
+  display: block;
+  position: absolute;
+  top: 70%;;
+  width: 30%;
+  height: 30px;
+  font-size: 1rem;
+  color: red;
+  box-shadow: 3px 3px 0 1px grey;
+}
