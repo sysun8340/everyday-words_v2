@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
-import Words from './Words'
-import Weather from './Weather'
-import City from './City'
+import Words from './Words.jsx'
+import Weather from './Weather.jsx'
+import City from './City.jsx'
 import '../style/content.css'
 
 class Content extends Component {

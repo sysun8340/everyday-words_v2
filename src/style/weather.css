@@ -1,0 +1,26 @@
+.weather-home {
+  font-size: 1rem;
+}
+.today {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.horizontalContainer {
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.date {
+  width: 100%;
+  text-align: center;
+}
+.right {
+  width: 50%;
+  text-align: center;
+}
+.left {
+  width: 50%;
+  text-align: center;
+}

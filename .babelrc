@@ -1,0 +1,22 @@
+{
+  "presets": [
+    [
+      "@babel/preset-react",
+      {
+        "pragma": "dom",
+        "pragmaFrag": "DomFrag", 
+        "throwIfNamespace": false 
+      }
+    ],
+    "@babel/preset-flow",
+    "@babel/preset-env"
+  ],
+  "plugins": [
+    "@babel/plugin-syntax-jsx",
+     "@babel/plugin-transform-react-jsx",
+     "@babel/plugin-transform-react-display-name",
+     "@babel/plugin-transform-react-jsx-self",
+     "@babel/plugin-transform-react-jsx-source",
+     "@babel/plugin-proposal-class-properties"
+    ]
+}

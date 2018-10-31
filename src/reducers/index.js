@@ -3,19 +3,28 @@ import { combineReducers } from 'redux'
 const words = (state = '', action) => {
   switch (action.type) {
     case 'WORDS_CHANGE': 
-      return action.words
+      return action.words // words是plain object
     default: 
       return state
   }
 }
 
- const date = (state = '', action) => {
+ const city = (state = '', action) => {
   switch (action.type) {
-    case 'DATE_CHANGE':
-      return action.date
+    case 'CITY_CHANGE':
+      return action.city // city是plain object
     default: 
       return state
   }
 }
 
-export default combineReducers({words, date})
+const weather = (state = {}, action) => {
+  switch (action.type) {
+    case "WEATHER_CHANGE":
+      return action.weather
+    default:
+      return state
+  }
+}
+
+export default combineReducers({words, city, weather})
