@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import '../style/words.css'
+import { Button } from 'antd-mobile'
 import { getIdByDate, getWordsById, genRandomId } from '../utils'
+import '../style/words.css'
 
 class Words extends Component {
 
@@ -30,12 +31,15 @@ class Words extends Component {
     return (
       <div className='wordsContainer'>
         <p className='wordsText'>{words.text}</p>
-        <button 
-          className='randomButton'
-          onClick={() => this.randomWords(dispatch)}
-        >
-          随机一下
-        </button>
+        <p className='wordsRef'>{`（${words.reference}）`}</p>
+        <div className='buttonContainer'>
+          <Button 
+            type='primary'
+            onClick={() => this.randomWords(dispatch)}
+          >
+            随机一下
+          </Button>
+        </div>
       </div>
     )
   }

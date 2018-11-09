@@ -12,3 +12,13 @@ export const setWeather = weather => ({
   type: 'WEATHER_CHANGE',
   weather: weather
 })
+
+export const setRequestResult = status => ({
+  type: 'REQUEST_END',
+  status: status
+})
+
+export const setError = errorMsg => ({
+  type: 'ERROR',
+  errorMsg: errorMsg
+})

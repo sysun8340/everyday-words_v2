@@ -1,21 +1,29 @@
 .wordsContainer {
   display: flex;
+  flex-direction: column;
   box-sizing: border-box;
-  justify-content: center;
-  flex-flow: wrap;
-}
-.wordsText {
-  width: 80%;
-  line-height: 2.5rem;
+  align-items: center;
+  justify-content: start;
+  padding-top: 10%;
+  height: 100%;
   
 }
-.randomButton {
-  display: block;
-  position: absolute;
-  top: 87%;;
-  width: 30%;
-  height: 30px;
-  font-size: 1rem;
-  color: red;
-  box-shadow: 3px 3px 0 1px grey;
+.wordsText {
+  width: 100%;
+  text-align: center;
+  padding: 0 1rem;
+  line-height: 1.7rem;
+  font-size: 1.1rem;
+  color: #003366;
+  font-family:  Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+.wordsRef {
+  width: 100%;
+  text-align: center;
+  color: #003366;
+}
+.buttonContainer {
+  position: fixed;
+  top: 85%;
+  width: 50%;
 }

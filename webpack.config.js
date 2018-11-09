@@ -16,6 +16,9 @@ module.exports = {
     path: path.resolve(__dirname, 'www'),
     filename: '[name].bundle.js'
   },
+  resolve: {
+    extensions: ['.js', '.jsx', '.json', 'css']
+  },
   module: {
     rules: [
       {
@@ -25,8 +28,16 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-        exclude: /node_modules/
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {}
+          }
+        ]
       }
     ]
   }

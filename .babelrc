@@ -12,6 +12,7 @@
     "@babel/preset-env"
   ],
   "plugins": [
+    ["import", { "libraryName": "antd-mobile", "style": "css" }],
     "@babel/plugin-syntax-jsx",
      "@babel/plugin-transform-react-jsx",
      "@babel/plugin-transform-react-display-name",

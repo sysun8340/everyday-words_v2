@@ -1,23 +1,20 @@
 import React, { Component } from 'react'
-import Header from './components/Header.jsx'
-import Content from './components/Content.jsx'
-import { BrowserRouter as Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
+import { HashRouter as Router, Route } from 'react-router-dom'
+import Header from './components/Header'
+import City from './components/City'
 import configureStore from './configureStore'
 import './style/app.css'
 
 class App extends Component {
-  componentWillMount () {
-
  
-  }
   render() {
     return (
       <Provider store={configureStore}>
         <Router>
           <div className='app'>
-            <Header />
-            <Content />
+            <Route exact path='/' component={Header} />
+            <Route path='/city' component={City} />
           </div>
         </Router>
       </Provider>

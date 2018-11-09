@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 
-const words = (state = '', action) => {
+const words = (state = {}, action) => {
   switch (action.type) {
     case 'WORDS_CHANGE': 
       return action.words // words是plain object
@@ -9,7 +9,7 @@ const words = (state = '', action) => {
   }
 }
 
- const city = (state = '', action) => {
+ const city = (state = {}, action) => {
   switch (action.type) {
     case 'CITY_CHANGE':
       return action.city // city是plain object
@@ -21,10 +21,28 @@ const words = (state = '', action) => {
 const weather = (state = {}, action) => {
   switch (action.type) {
     case "WEATHER_CHANGE":
-      return action.weather
+      return action.weather // weather是plain object
     default:
       return state
   }
 }
 
-export default combineReducers({words, city, weather})
+const requestResult = (state = true, action) => {
+  switch (action.type) {
+    case 'REQUEST_END':
+      return action.status
+    default:
+      return state
+  }
+}
+
+const errorMsg = (state = '', action) => {
+  switch (action.type) {
+    case 'ERROR':
+      return action.errorMsg
+    default:
+      return state
+  }
+}
+
+export default combineReducers({words, city, weather, requestResult, errorMsg})

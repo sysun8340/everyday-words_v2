@@ -1,22 +1,42 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Tabs } from 'antd-mobile'
+import Words from './Words'
+import WeatherContainer from './WeatherContainer'
 import '../style/header.css'
 
 class Header extends Component {
+
+  state = {
+    isTabChange: false
+  }
+
   render() {
-    
+    const tabs = [
+      { title: '天气', sub: '1' },
+      { title: '每日一句', sub: '2' }
+    ]
+
     return (
-      <header className='header'>
-        <NavLink exact to='/' className='nav words' activeStyle={{color: 'black', backgroundColor: 'gray'}}>
-          <p className='text'>每日一句</p>
-        </NavLink>
-        <NavLink to='/weather' className='nav weather' activeStyle={{color: 'black', backgroundColor: 'gray'}}>
-          <p className='text'>天气</p>
-        </NavLink>
-        <NavLink to='/setup' className='nav setup' activeStyle={{color: 'black', backgroundColor: 'gray'}}>
-          <p className='text'>城市</p>
-        </NavLink>
-      </header>
+      <div className='header'>
+        <Tabs
+          tabs={tabs}
+          initialPage={'1'}
+          onChange={() => {
+            console.log('改变')
+            this.setState({
+              isTabChange: true
+            })
+            setTimeout(() => {
+              this.setState({
+                isTabChange: false
+              })
+            }, 0)
+          }}
+        >
+          <WeatherContainer isTabChange={this.state.isTabChange}/>
+          <Words />
+        </Tabs>
+      </div>
     )
   }
 }
